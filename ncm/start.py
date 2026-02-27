@@ -47,7 +47,7 @@ def download_radio_programs(radio_id):
     if not programs:
         print('No programs found for radio id: {}'.format(radio_id))
         return
-    folder_name = format_string(programs[0].get('radio', {}).get('name', 'unknown')) + ' - radio'
+    folder_name = format_string((programs[0].get('radio') or {}).get('name', 'unknown')) + ' - radio'
     folder_path = os.path.join(config.DOWNLOAD_DIR, folder_name)
     for i, program in enumerate(programs):
         print('{}: {}'.format(i + 1, program['name']))
