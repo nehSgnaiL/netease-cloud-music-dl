@@ -126,7 +126,7 @@ class CloudApi(object):
         """
         Get all programs from a DJ radio by radio id
         :param radio_id:
-        :return:
+        :return: A list of program objects from the radio.
         """
         programs = []
         limit = 100
